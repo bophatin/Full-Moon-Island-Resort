@@ -1,0 +1,100 @@
+=font-face($family, $path, $svg, $weight: normal, $style: normal)
+  @font-face
+    font-family : $family
+    src : url('#{$path}.otf')
+    font-weight : $weight
+    font-style : $style
+
+
+// REINITIALIZE
+=reinitialize($zero)
+  margin : $zero
+  padding : $zero
+
+// TITLES
+=title-serif($pointer-events, $font-size: 90px, $font-weight:normal)
+  font-family : $serif
+  font-size : $font-size
+  font-weight : $font-weight
+  pointer-events : $pointer-events
+
+=title-capitals($font-size: 14px, $text-transform:uppercase, $letter-spacing:1px, $font-weight:normal, $pointer-events:none)
+  font-family : $capitals
+  font-size : $font-size
+  text-transform : $text-transform
+  letter-spacing : $letter-spacing
+  font-weight : $font-weight
+  pointer-events : $pointer-events
+
+// BUTTON
+=btn($border:none, $bc-color:black, $text-transform:uppercase, $letter-spacing:1px, $font-size:10px, $padding:15px, $color:white, $cursor:pointer)
+  border : $border
+  background-color : $bc-color
+  font-family : $capitals
+  text-transform : $text-transform
+  letter-spacing : $letter-spacing
+  font-size : $font-size
+  padding : $padding
+  color : $color
+  cursor : $cursor
+
+=btn-hover($background-color:rgba(255,255,255,0.8), $color:black, $transition-duration:0.3s)
+  background-color : $background-color
+  color : $color
+  transition-duration : $transition-duration
+
+	
+// BLOC DISPLAY FLEX CENTER
+=display-center($display:flex, $justify-content:center, $align-items:center)
+  display : $display
+  justify-content : $justify-content
+  align-items : $align-items
+
+=display-align($display:flex, $align-items:center)
+  display : $display
+  align-items : $align-items
+
+=display-justify($display:flex, $justify-content:center)
+  display : $display
+  justify-content : $justify-content 
+
+
+// BLOC DISPLAY FLEX CENTER + COLUMN
+=display-column($flex-direction:column)
+  @include display-center
+  flex-direction : $flex-direction
+
+
+// BLOC CONTAINER
+=bloc-container($margin, $max-width: 90%, $min-height: 100vh)
+  max-width : $max-width
+  min-height : $min-height
+  margin : $margin
+
+// BACKGROUND IMG
+=background-img($url, $background-attachment: fixed, $background-repeat: no-repeat)
+  background-image : $url
+  background-attachment : $background-attachment
+  background-repeat : $background-repeat
+
+
+// POSITION ABSOLUTE CENTER
+=absolute-center($position: absolute, $top: 50%, $left: 50%, $transform: translate(-50%, -50%))
+  position : $position
+  top : $top
+  left : $left
+  transform : $transform
+
+=absolute-left($position: absolute, $left: 50%, $transform: translate(-50%))
+  position : $position
+  left : $left
+  transform : $transform
+
+
+// BEFORE + AFTER
+=before-after($top, $left, $content:'', $position:absolute, $width:100%)
+  content : $content
+  position : $position
+  width : $width
+  top : $top
+  left : $left
