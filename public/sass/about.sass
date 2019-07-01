@@ -1,18 +1,25 @@
+@import "import/reset"
 @import "import/mixins"
 @import "import/variables"
 
 .container_about, .container_list
-    @include bloc-container(auto)
+    @include bloc-container(90vh, auto)
     display: flex
     flex-wrap: wrap
     background-color: $peach
 
+    @include breakpoint(1024)
+        max-width: 100%
+
+.container_list
+    @include breakpoint(768)
+        min-height: auto    
+
+
 .content_title 
     @include display-column()
     width: 100%
-    height: 400px
-    justify-content: flex-end
-    padding-bottom: 100px
+    height: 44vh
     background-color: white
     & h1
         @include title-serif(none)
@@ -22,15 +29,37 @@
         @include title-capitals(14px, none)
         width: 100%
 
+    @include breakpoint(1440)
+        padding-left: 5%
+        & h1
+            font-size: 70px
+    @include breakpoint(768)
+        height: 25vh
+        & h1 
+            font-size: 50px
+
 .content_intro
     @include display-justify()
     width: 100%
     min-height: 46vh
 
+    @include breakpoint(768)
+        height: 65vh
+
 .content_blocs
     width: 80%
     min-height: 46vh
     display: flex
+    @include breakpoint(1024)
+        width: 100%
+        padding-left: 5%
+        padding-right: 5%
+    @include breakpoint(768)
+        padding-left: inherit
+        padding-right: inherit
+        width: 80%
+        flex-direction: column
+        padding-top: 20px
 
 .bloc_txt
     @include display-align()
@@ -42,6 +71,16 @@
         font-weight: 300
         font-size: 26px
 
+    @include breakpoint(1024)
+        & p 
+            width: 500px
+    @include breakpoint(768)
+        width: 100%
+        & p 
+            width: 100%
+            font-size: 24px
+
+
 .figure_1
     @include reinitialize(0)
     @include display-justify()
@@ -52,7 +91,18 @@
         max-width: 310px
         max-height: 370px
         margin-top: -100px
-        pointer-events: none
+
+    @include breakpoint(1024)
+        & img 
+            max-width: 300px
+            max-height: 350px
+    @include breakpoint(768)
+        width: 65%
+        margin: auto
+        & img 
+            max-width: 250px
+            max-height: 300px
+            margin-top: inherit
 
 .figcaption_1
     @include legend-typo()
@@ -85,6 +135,16 @@
     & p 
         @include text()
 
+    @include breakpoint(1440)
+        width: 90%
+    @include breakpoint(768)
+        width: 80%
+        min-height: auto
+        padding-bottom: 30px
+        & ul 
+            padding-top: 60px
+            margin-bottom: 20px
+
 
 /* CONTAINER FOUNDERS */
 .content_founders
@@ -98,6 +158,19 @@
         @include title-capitals(14px, none)
         margin-bottom: 50px
 
+    @include breakpoint(1440)
+        & h2
+            font-size: 70px
+    @include breakpoint(768)
+        width: 90%
+        min-height: auto
+        padding-top: 60px
+        & h2 
+            font-size: 50px
+        & p  
+            margin-bottom: 30px
+
+
 .container_founders
     @include wrapper-container(auto)
     @include display-column()
@@ -107,17 +180,41 @@
         display: flex
         margin: auto
         margin-top: -350px
-        pointer-events: none
+
+    @include breakpoint(1440)
+        & img 
+            margin-top: -370px
+    @include breakpoint(768)
+        height: auto
+        & img 
+            max-width: 100%
+            height: auto
+            margin-top: inherit
+
 
 .content_baseline
     @include bloc-content(80%, 70vh)
     margin: auto
     display: flex
 
+    @include breakpoint(1440)
+        width: 90%
+    @include breakpoint(1024)
+        width: 100%
+    @include breakpoint(768)
+        flex-direction: column
+
+
 .content_found_left
     @include bloc-content(60%, 65vh)
     display: flex
     flex-direction: column
+    
+    @include breakpoint(768)
+        width: 80%
+        margin: auto
+        padding-top: 60px
+
 
 .content_found_right
     @include bloc-content(40%, 65vh)
@@ -130,7 +227,21 @@
         padding-right: 100px
         width: 265px
         height: 310px
-        pointer-events: none
+
+    @include breakpoint(1024)
+        & img 
+            padding-right: 10%
+    @include breakpoint(768)
+        width: 80%
+        min-height: auto
+        margin: auto
+        & img 
+            margin: auto
+            position: inherit
+            padding-top: inherit
+            padding-bottom: 60px
+            padding-right: inherit
+
 
 .top
     @include bloc-content(100%, 50%)
@@ -140,6 +251,17 @@
         @include reinitialize(0)
         @include intro-typo(26px)
         width: 550px
+
+    @include breakpoint(1024)
+        padding-left: 8%
+        & p 
+            width: 500px
+    @include breakpoint(768)
+        padding-left: inherit
+        & p 
+            width: 100%
+            font-size: 24px
+
 
 .figure_2
     @include reinitialize(0)
@@ -151,12 +273,26 @@
         right: 0
         width: 400px
         height: 250px
-        pointer-events: none
+    @include breakpoint(768)
+        position: inherit
+        margin: auto
+        & img 
+            position: inherit
+            right: inherit
+            margin: auto
 
+            
 .figcaption_2
     @include legend-typo()
     right: 0
     bottom: 40px
+    @include breakpoint(768)
+        right: inherit
+        bottom: inherit
+        width: 80%
+        padding-top: 20px
+        text-align: center
+
 
 
 /* CONTAINER BIO */
@@ -164,24 +300,55 @@
     @include bloc-content(100%, 100vh)
     margin: auto
     display: flex
+    
+    @include breakpoint(768)
+        flex-direction: column
 
 .content_bio_txt
     @include display-column()
     width: 50%
 
+    @include breakpoint(768)
+        width: 100%
+        order: 2
+        padding-top: 45px
+        padding-bottom: 40px
+
 .title_bio
     @include intro-typo(30px)
     width: 435px
+
+    @include breakpoint(1024)
+        width: 350px
+    @include breakpoint(768) 
+        @include reinitialize(0)  
+        width: 80%
+        
+
 .txt_bio
     @include text()
     width: 435px
+
+    @include breakpoint(1024)
+        width: 350px
+    @include breakpoint(768)
+        width: 80%
 
 .content_bio_img, .content_bio_img2
     @include display-column()
     width: 50%
     background-color: $peach
     position: relative
-    pointer-events: none
+
+    @include breakpoint(1024)
+        width: 100%
+        & img 
+            width: 350px
+            height: auto
+    @include breakpoint(768)
+        padding-top: 100px
+        & img 
+            width: 300px
 
 .content_status
     @include reinitialize(0)
@@ -195,3 +362,9 @@
     & p 
         @include reinitialize(O)
         @include title-capitals(12px, none)
+
+    @include breakpoint(1024)
+        bottom: 110px
+    @include breakpoint(768)
+        bottom: inherit
+        top: 25px
