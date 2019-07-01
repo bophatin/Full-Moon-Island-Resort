@@ -188,6 +188,7 @@
   display: flex;
   margin: auto;
   margin-top: -350px;
+  pointer-events: none;
 }
 
 .content_baseline {
@@ -218,6 +219,7 @@
   padding-right: 100px;
   width: 265px;
   height: 310px;
+  pointer-events: none;
 }
 
 .top {
@@ -249,6 +251,7 @@
   right: 0;
   width: 400px;
   height: 250px;
+  pointer-events: none;
 }
 
 .figcaption_2 {
@@ -300,6 +303,7 @@
   width: 50%;
   background-color: #fcf6f5;
   position: relative;
+  pointer-events: none;
 }
 
 .content_status {
