@@ -75,35 +75,6 @@ function changeHumans() {
 }
 
 
-
-// SCROLL PAGE ABOUT
-/*var derniere_position_de_scroll_connue = 0;
-var ticking = false;
-
-function faireQuelqueChose(position_scroll) {
-    anime.timeline({ })
-    .add ({
-        targets: '.container_founders > img',
-        opacity: [0,1],
-        easing: 'easeOutExpo',
-    })
-}
-
-window.addEventListener('scroll', function(e) {
-  derniere_position_de_scroll_connue = window.scrollY;
-
-  if (!ticking) {
-    window.requestAnimationFrame(function() {
-      faireQuelqueChose(derniere_position_de_scroll_connue);
-      ticking = false;
-    });
-  }
-
-  ticking = true;
-});*/
-
-
-
 // CALL
 // Home Page
 document.getElementById('openNav').addEventListener("click", function() { openNav() })
