@@ -14,7 +14,9 @@
 
 <body>
     <?php require('view/navView.php'); ?>
-    <?php require('view/headerView.php'); ?>
+    <div class="container_screen1">
+        <?php require('view/headerView.php'); ?>
+    </div>
     
     <?= $content; ?>
     
