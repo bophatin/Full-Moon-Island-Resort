@@ -6,27 +6,34 @@ body, html, h1, h2, h3 {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 li {
   list-style: none;
 }
 
+img {
+  pointer-events: none;
+}
+
 @font-face {
   font-family: "Staat-Bold";
   src: url("public/fonts/Staat-Bold.otf");
   font-weight: normal;
-  font-style: normal;
 }
 @font-face {
-  font-family: "Gotham-Medium";
-  src: url("public/fonts/Gotham-Medium.otf");
+  font-family: "Gotham-Book";
+  src: url("public/fonts/Gotham-Book.otf");
   font-weight: normal;
-  font-style: normal;
 }
+.container_screen1 {
+  height: 10vh;
+}
+
 #hp {
   max-width: 90%;
-  min-height: 100vh;
+  min-height: 90vh;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -35,6 +42,7 @@ li {
   background-image: url("../img/FMI-day.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
+  width: 100%;
   position: relative;
 }
 
@@ -56,9 +64,24 @@ li {
   max-width: 800px;
   color: white;
 }
+@media all and (max-width: 1440px) {
+  #h1_hp {
+    font-size: 70px;
+  }
+}
+@media all and (max-width: 768px) {
+  #h1_hp {
+    font-size: 50px;
+  }
+}
+@media all and (max-width: 480px) {
+  #h1_hp {
+    font-size: 40px;
+  }
+}
 
 .little_title {
-  font-family: "Gotham-Medium";
+  font-family: "Gotham-Book";
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -71,7 +94,7 @@ li {
 button {
   border: none;
   background-color: black;
-  font-family: "Gotham-Medium";
+  font-family: "Gotham-Book";
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 10px;
@@ -90,7 +113,7 @@ button:hover {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 90px;
+  min-height: 10vh;
   z-index: 1000;
   background-color: white;
   position: fixed;
@@ -138,19 +161,19 @@ i:hover {
   content: "";
   position: absolute;
   width: 100%;
+  height: 1px;
+  background: black;
   top: -6px;
   left: 0;
-  height: 1px;
-  background-color: black;
 }
 #openNav span:after {
   content: "";
   position: absolute;
   width: 100%;
+  height: 1px;
+  background: black;
   top: 6px;
   left: 0;
-  height: 1px;
-  background-color: black;
 }
 
 .overlay {
@@ -176,11 +199,11 @@ i:hover {
   content: "";
   position: absolute;
   width: 100%;
-  top: calc(100% + 0.15rem);
-  left: 0;
   height: 1px;
   background: black;
   transform: scale3d(0, 1, 1);
+  top: calc(100% + 0.15rem);
+  left: 0;
   transform-origin: 0% 50%;
   transition: opacity 0.3s, transform 0.3s;
 }
