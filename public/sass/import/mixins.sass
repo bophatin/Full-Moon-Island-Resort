@@ -12,7 +12,7 @@
 
 
 // TITLES
-=title-serif($pointer-events, $font-size: 90px, $font-weight:normal)
+=title-serif($pointer-events, $font-size:90px, $font-weight:normal)
   font-family : $serif
   font-size : $font-size
   font-weight : $font-weight
@@ -92,7 +92,7 @@
   min-height : $min-height
   margin : $margin
 
-=bloc-container($margin, $max-width:90%, $min-height:100vh)
+=bloc-container($min-height, $margin, $max-width:90%)
   max-width : $max-width
   min-height : $min-height
   margin : $margin
@@ -143,3 +143,19 @@
   left : $left
   transform-origin : $transform-origin
   transition : $transition
+
+
+// MEDIA QUERIES
+= breakpoint($point)
+  @if $point == 1440
+    @media all and (max-width: $middle)
+      @content
+  @if $point == 1024
+    @media all and (max-width: $laptop)
+      @content
+  @if $point == 768
+    @media all and (max-width: $tablet)
+      @content
+  @if $point == 480
+    @media all and (max-width: $mobile)
+      @content
