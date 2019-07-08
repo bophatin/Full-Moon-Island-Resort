@@ -9,6 +9,8 @@
             <button>Discover</button>
         </div>
     </div>
+
+    <script src="public/js/index.js"></script>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template/templatePage.php'); ?>
