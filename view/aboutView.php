@@ -31,15 +31,17 @@
             </ul>
             <p class="change_txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
         </div>
-        <section class="content_founders">
-            <h2>The founders</h2>
-            <p>Pen Vokhanith & Lay Prohas</p>
-        </section>
     </div>
 
-    <div class="container_founders">
+    <section class="content_founders">
+        <div class="content_hf">
+            <h2>The founders</h2>
+            <p>Pen Vokhanith & Lay Prohas</p>
+        </div>
         <img src="public/img/2.jpg" alt="Pen Vokhanith & Lay Prohas" />
+    </section>
 
+    <div class="container_founders">
         <div class="content_baseline">
             <div class="content_found_left">
                 <div class="top">
@@ -58,7 +60,7 @@
 
     <div class="container_bio">
         <div class="content_bio_txt">
-            <p class="title_bio">They call her The Superwoman, and with good reason— she’s a force to be reckoned with.</p>
+            <p class="title_bio">They call her The Superwoman, and with good reason !</p>
             <p class="txt_bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         </div>
         <div class="content_bio_img">
@@ -79,11 +81,12 @@
             </div>
         </div>
         <div class="content_bio_txt">
-            <p class="title_bio">They call him The Man on board, and with good reason— he’s a force to be reckoned with.</p>
+            <p class="title_bio">They call him The Man on board</p>
             <p class="txt_bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         </div>
     </div>
 
+    <script src="public/js/about.js"></script>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template/templatePage.php'); ?>
