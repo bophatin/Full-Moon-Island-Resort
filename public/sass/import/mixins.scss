@@ -1,0 +1,197 @@
+@mixin fontface($name, $path, $weight, $exts: otf) {
+    $src: null;
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
+    );
+    $extmods: (
+		otf: ""
+	);
+    @each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+	@font-face {
+        font-family: quote($name);
+        font-weight: $weight;
+		src: $src;
+	}
+}
+    
+
+// REINITIALIZE
+@mixin reinitialize($zero) {
+    margin : $zero;
+    padding : $zero;   
+}
+
+// TITLES
+@mixin title-serif($pointer-events, $font-size:90px, $font-weight:normal) {
+    font-family: $serif;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    pointer-events: $pointer-events;
+}
+
+@mixin title-capitals($font-size, $pointer-events, $text-transform:uppercase, $letter-spacing:1px, $font-weight:normal) {
+    font-family: $capitals;
+    font-size: $font-size;
+    text-transform: $text-transform;
+    letter-spacing: $letter-spacing;
+    font-weight: $font-weight;
+    pointer-events: $pointer-events;
+}
+
+@mixin legend-typo($position:absolute, $font-size:10px, $letter-spacing:1px, $text-tranform:uppercase) {
+    position: $position;
+    font-family: $capitals;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+    text-transform: $text-tranform;
+}
+
+@mixin intro-typo($font-size, $font-weight:300) {
+    font-family: $cormorant;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
+
+// TEXT
+@mixin text($font-size:16px, $line-height:24px, $text-align:justify) {
+    font-family: $capitals;
+    font-size: $font-size;
+    line-height: $line-height;
+    text-align: $text-align  ;  
+}
+
+// BUTTON
+@mixin btn($border:none, $bc-color:black, $text-transform:uppercase, $letter-spacing:1px, $font-size:10px, $padding:15px, $color:white, $cursor:pointer) {
+    border: $border;
+    background-color: $bc-color;
+    font-family: $capitals;
+    text-transform: $text-transform;
+    letter-spacing: $letter-spacing;
+    font-size: $font-size;
+    padding: $padding;
+    color: $color;
+    cursor: $cursor;
+}
+
+@mixin btn-hover($background-color:rgba(255,255,255,0.8), $color:black, $transition-duration:0.3s) {
+    background-color : $background-color;
+    color : $color;
+    transition-duration : $transition-duration;
+}
+
+// BLOC DISPLAY FLEX CENTER
+@mixin display-center($display:flex, $justify-content:center, $align-items:center) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin display-align($display:flex, $align-items:center) {
+    display: $display;
+    align-items: $align-items;  
+}
+
+@mixin display-justify($display:flex, $justify-content:center) {
+    display: $display;
+    justify-content: $justify-content; 
+}
+
+// BLOC DISPLAY FLEX CENTER + COLUMN
+@mixin display-column($flex-direction:column) {
+    @include display-center;
+    flex-direction: $flex-direction;
+}
+
+// BLOC CONTAINER
+@mixin wrapper-container($margin, $width:100%, $min-height:100vh) {
+    width: $width;
+    min-height: $min-height;
+    margin: $margin;
+}
+
+@mixin bloc-container($min-height, $margin, $max-width:90%) {
+    max-width: $max-width;
+    min-height: $min-height;
+    margin: $margin;
+}
+
+@mixin bloc-content($width, $min-height) {
+    width: $width;
+    min-height: $min-height;   
+}
+
+// BACKGROUND IMG
+@mixin background-img($url, $background-attachment: fixed, $background-repeat: no-repeat) {
+    background-image: $url;
+    background-attachment: $background-attachment;
+    background-repeat: $background-repeat;
+}
+
+// POSITION ABSOLUTE CENTER
+@mixin absolute-center($position: absolute, $top: 50%, $left: 50%, $transform: translate(-50%, -50%)) {
+    position: $position;
+    top: $top;
+    left: $left;
+    transform: $transform;    
+}
+
+@mixin absolute-left($position: absolute, $left: 50%, $transform: translate(-50%)) {
+    position: $position;
+    left: $left;
+    transform: $transform;    
+}
+
+// BEFORE + AFTER
+@mixin before-after($top, $left, $content:'', $position:absolute, $width:100%, $height:1px, $background:black) {
+    content: $content;
+    position: $position;
+    width:  $width;
+    height: $height;
+    background: $background;
+    top: $top;
+    left: $left;   
+}
+
+@mixin ba-link($content:'', $position:absolute, $width:100%, $height:1px, $background:black, $transform:scale3d(0,1,1), $top:calc(100% + 0.15rem), $left:0, $transform-origin:0% 50%, $transition:(opacity 0.3s, transform 0.3s)) {
+    content: $content;
+    position: $position;
+    width: $width;
+    height: $height;
+    background: $background;
+    transform: $transform;
+    top: $top;
+    left: $left;
+    transform-origin: $transform-origin;
+    transition: $transition;   
+}
+
+
+// MEDIA QUERIES
+@mixin break-mid {
+    @media (max-width: $middle) {
+        @content;
+    }
+}
+
+@mixin break-laptop {
+    @media (max-width: $laptop) {
+        @content; 
+    }
+}
+
+@mixin break-tab {
+    @media (max-width: $tablet) {
+        @content; 
+    }
+}
+
+@mixin break-mob {
+    @media (max-width: $mobile) {
+        @content; 
+    }
+}
