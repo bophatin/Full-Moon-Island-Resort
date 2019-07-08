@@ -1,0 +1,153 @@
+@import "import/reset";
+@import "import/mixins";
+@import "import/variables";
+
+//INDEXVIEW
+.container_screen1 {
+    height: 10vh; 
+}
+
+#hp {
+    @include bloc-container(90vh, auto);
+    @include display-column;
+    @include background-img(url("../img/FMI-day.jpg"));
+    width: 100%;
+    position: relative;    
+}
+
+#container_txt {
+    @include absolute-center();
+    text-align: center;  
+}
+
+#h1_hp {
+    @include reinitialize(0);
+    @include title-serif(none);
+    max-width: 800px;
+    color: white;
+
+    @include break-mid() { font-size: 70px; }
+    @include break-tab() { font-size: 60px; }
+    @include break-mob() { font-size: 40px; }
+}
+    
+.little_title {
+    @include title-capitals(14px, none);
+    color: white;
+    padding-bottom: 10px;
+    
+    @include break-mob() { font-size: 12px; line-height: 15px; }
+}
+
+button {
+    @include btn();
+    margin-top: 30px;
+    :hover {
+        @include btn-hover()   
+    }
+}
+
+//HEADER VIEW
+.container_openNav {
+    @include display-align();
+    width: 100%;
+    min-height: 10vh;
+    z-index: 1000;
+    background-color: white;
+    position: fixed;   
+}
+
+.logo {
+    @include absolute-left();
+    font-family: $serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: $pointer; 
+
+    @include break-mob() { font-size: 14px; }
+}
+
+i {
+    position: absolute;
+    right: 0;
+    padding-right: 5%;
+    cursor: $pointer;
+    &:hover {
+        transition: 0.3s;
+        color: peru;  
+    }
+}
+
+
+#openNav {
+    height: 15px;
+    width: 22px;
+    position: relative;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 5%;
+    span {
+        height: 1px;
+        background-color: black;
+        width: 100%;
+        position: absolute;
+        top:7px;
+        left: 0; 
+    }
+    :before {
+        @include before-after(-6px, 0);
+    }
+    :after {
+        @include before-after(6px, 0);   
+    }  
+}
+
+// OVERLAY
+.overlay {
+    @include display-column();
+    width: 0;
+    min-height: $height_Vh;
+    background-color: $blue;
+    position: fixed;
+    transition: 0.5s;
+    overflow-x: hidden;
+    z-index: 1000;   
+}
+
+#closeNav {
+    font-family: $crimson;
+    font-style: italic;
+    position: relative;
+    &::after {
+        @include ba-link(); 
+    }
+    &:hover::after {
+        transform: scale3d(1,1,1);   
+    } 
+}
+
+.container_overlay {
+    @include display-justify(); 
+}
+
+.overlay_content {
+    ul {
+        @include reinitialize(0);
+        padding-top: 20px;  
+    }
+    li {
+        @include title-serif(inherit);
+        text-align: center;
+        padding: 10px; 
+        &:hover {
+            -webkit-text-stroke: 1px;
+            -webkit-text-stroke-color: black;
+            color: rgba(0, 0, 0, 0);  
+        }
+    }
+    a {
+        opacity: 0 1;
+        transition: 0.3s;   
+    }
+}
