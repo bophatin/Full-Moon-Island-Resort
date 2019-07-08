@@ -1,0 +1,13 @@
+body, html, h1, h2, h3 {
+    margin: 0;
+    padding: 0; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+li { list-style: none; }
+img { pointer-events: none; }
